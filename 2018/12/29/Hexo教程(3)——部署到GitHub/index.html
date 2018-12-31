@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>Hexo教程(3)——部署到GitHub | PlutoWang</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="&amp;emsp;&amp;emsp;我们之前的工作是在本地搭建的Hexo服务，只有自己能看到。如果想让别人也能访问到你的博客，就必须部署在服务器上。但是仅仅为了一个静态网站就租一个服务器，不仅配置麻烦，而且还花钱。有很多平台提供静态网站托管服务，这里选择了GitHub Pages。今天就介绍如何把本地Hexo部署到GitHub上。">
+<meta name="keywords" content="Hexo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo教程(3)——部署到GitHub">
+<meta property="og:url" content="http://www.plutowang.com/2018/12/29/Hexo教程(3)——部署到GitHub/index.html">
+<meta property="og:site_name" content="PlutoWang">
+<meta property="og:description" content="&amp;emsp;&amp;emsp;我们之前的工作是在本地搭建的Hexo服务，只有自己能看到。如果想让别人也能访问到你的博客，就必须部署在服务器上。但是仅仅为了一个静态网站就租一个服务器，不仅配置麻烦，而且还花钱。有很多平台提供静态网站托管服务，这里选择了GitHub Pages。今天就介绍如何把本地Hexo部署到GitHub上。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-12-31T01:03:49.273Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo教程(3)——部署到GitHub">
+<meta name="twitter:description" content="&amp;emsp;&amp;emsp;我们之前的工作是在本地搭建的Hexo服务，只有自己能看到。如果想让别人也能访问到你的博客，就必须部署在服务器上。但是仅仅为了一个静态网站就租一个服务器，不仅配置麻烦，而且还花钱。有很多平台提供静态网站托管服务，这里选择了GitHub Pages。今天就介绍如何把本地Hexo部署到GitHub上。">
+  
+    <link rel="alternate" href="/atom.xml" title="PlutoWang" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">PlutoWang</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://www.plutowang.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Hexo教程(3)——部署到GitHub" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/12/29/Hexo教程(3)——部署到GitHub/" class="article-date">
+  <time datetime="2018-12-29T05:00:00.000Z" itemprop="datePublished">2018-12-29</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/CS/">CS</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Hexo教程(3)——部署到GitHub
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>&emsp;&emsp;我们之前的工作是在本地搭建的Hexo服务，只有自己能看到。如果想让别人也能访问到你的博客，就必须部署在服务器上。但是仅仅为了一个静态网站就租一个服务器，不仅配置麻烦，而且还花钱。有很多平台提供静态网站托管服务，这里选择了GitHub Pages。今天就介绍如何把本地Hexo部署到GitHub上。</p>
+<a id="more"></a>
+<h2 id="创建GitHub仓库"><a href="#创建GitHub仓库" class="headerlink" title="创建GitHub仓库"></a>创建GitHub仓库</h2><p>&emsp;&emsp;作为全球最大同性交友社区，GitHub也提供个人博客托管服务。不会用GitHub的也不要紧张，以下都是很基础的操作。<br>&emsp;&emsp;首先注册一个GitHub账户，然后创建一个名为[账户名.github.io]的仓库(repository)，这是固定写法。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.plutowang.com/2018/12/29/Hexo教程(3)——部署到GitHub/" data-id="cjqbpjdm200009hu4fys2fug5" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2018/12/29/Hexo教程(2)——配置与使用/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Hexo上手教程(2)——配置与使用</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/CS/">CS</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/12/29/Hexo教程(3)——部署到GitHub/">Hexo教程(3)——部署到GitHub</a>
+          </li>
+        
+          <li>
+            <a href="/2018/12/29/Hexo教程(2)——配置与使用/">Hexo上手教程(2)——配置与使用</a>
+          </li>
+        
+          <li>
+            <a href="/2018/12/28/Hexo教程(1)——搭建本地服务/">Hexo上手教程(1)——搭建本地服务</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 PlutoWang<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

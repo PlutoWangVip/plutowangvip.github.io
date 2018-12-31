@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>Hexo上手教程(1)——搭建本地服务 | PlutoWang</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="&amp;emsp;&amp;emsp;本网站使用Hexo博客框架，如果你也想搭建属于自己的博客站点，写写文章，发发照片什么的，也可以使用Hexo。极易上手，老少皆宜。网上有关Hexo的教程很多，官网教程也很详细，甚至嗨哟B站教学视频。这篇文章只是一个梳理，基于Mac，Windows大概也差不多。可能会有细节上的遗漏，我会随时更新的~">
+<meta name="keywords" content="Hexo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo上手教程(1)——搭建本地服务">
+<meta property="og:url" content="http://www.plutowang.com/2018/12/28/Hexo教程(1)——搭建本地服务/index.html">
+<meta property="og:site_name" content="PlutoWang">
+<meta property="og:description" content="&amp;emsp;&amp;emsp;本网站使用Hexo博客框架，如果你也想搭建属于自己的博客站点，写写文章，发发照片什么的，也可以使用Hexo。极易上手，老少皆宜。网上有关Hexo的教程很多，官网教程也很详细，甚至嗨哟B站教学视频。这篇文章只是一个梳理，基于Mac，Windows大概也差不多。可能会有细节上的遗漏，我会随时更新的~">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://wx4.sinaimg.cn/mw690/eadaa528ly1fyooc9csjgj21jk0u07wh.jpg">
+<meta property="og:updated_time" content="2018-12-31T00:09:09.529Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo上手教程(1)——搭建本地服务">
+<meta name="twitter:description" content="&amp;emsp;&amp;emsp;本网站使用Hexo博客框架，如果你也想搭建属于自己的博客站点，写写文章，发发照片什么的，也可以使用Hexo。极易上手，老少皆宜。网上有关Hexo的教程很多，官网教程也很详细，甚至嗨哟B站教学视频。这篇文章只是一个梳理，基于Mac，Windows大概也差不多。可能会有细节上的遗漏，我会随时更新的~">
+<meta name="twitter:image" content="http://wx4.sinaimg.cn/mw690/eadaa528ly1fyooc9csjgj21jk0u07wh.jpg">
+  
+    <link rel="alternate" href="/atom.xml" title="PlutoWang" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">PlutoWang</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://www.plutowang.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Hexo教程(1)——搭建本地服务" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/12/28/Hexo教程(1)——搭建本地服务/" class="article-date">
+  <time datetime="2018-12-28T05:00:00.000Z" itemprop="datePublished">2018-12-28</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/CS/">CS</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Hexo上手教程(1)——搭建本地服务
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>&emsp;&emsp;本网站使用Hexo博客框架，如果你也想搭建属于自己的博客站点，写写文章，发发照片什么的，也可以使用Hexo。极易上手，老少皆宜。网上有关Hexo的教程很多，<a href="https://hexo.io/zh-cn/" target="_blank" rel="noopener">官网</a>教程也很详细，甚至嗨哟B站教学<a href="https://space.bilibili.com/362224537/channel/detail?cid=60350" target="_blank" rel="noopener">视频</a>。这篇文章只是一个梳理，基于Mac，Windows大概也差不多。可能会有细节上的遗漏，我会随时更新的~</p>
+<a id="more"></a>
+<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><h3 id="Hexo是什么"><a href="#Hexo是什么" class="headerlink" title="Hexo是什么"></a>Hexo是什么</h3><p>&emsp;&emsp; <a href="https://github.com/hexojs" target="_blank" rel="noopener">Hexo</a>是一个基于Node.js的博客框架，快速简洁。支持Markdown，且拥有丰富的主题和插件。Linux，Mac，Windows均可使用。<br><br>&emsp;&emsp; 和其他的博客框架比如Jekyll、Octopress、Wordpress类似，我们可以使用Hexo生成静态网页，并托管到GitHub上。<br><br>&emsp;&emsp; 感谢来自台湾的作者<a href="https://github.com/tommy351" target="_blank" rel="noopener">tommy351</a>。</p>
+<h3 id="Hexo适合我嘛"><a href="#Hexo适合我嘛" class="headerlink" title="Hexo适合我嘛"></a>Hexo适合我嘛</h3><p>&emsp;&emsp; 如果你不是程序员，不要担心，搭建和部署Hexo超级简单(除非遇到比较奇葩的环境问题)。Hexo拥有丰富的主题和插件，不管是写文章，还是图片展示，基本可以满足你的所有需求。 <br><br>&emsp;&emsp; 你是程序员的话，选择就比较多了，但是如果你不是前端开发者，完全可以把重心放在自己的领域，Hexo可以省去许多麻烦。</p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><h3 id="安装准备"><a href="#安装准备" class="headerlink" title="安装准备"></a>安装准备</h3><p>&emsp;&emsp;安装Hexo前需要确定你的电脑里已经有：</p>
+<ul>
+<li><a href="https://nodejs.org/en/" target="_blank" rel="noopener">Node.js</a></li>
+<li><a href="https://git-scm.com/" target="_blank" rel="noopener">Git</a></li>
+</ul>
+<p>&emsp;&emsp;官网都告诉你了，安装超级简单，就不多说了。</p>
+<h3 id="Hexo安装"><a href="#Hexo安装" class="headerlink" title="Hexo安装"></a>Hexo安装</h3><p>&emsp;&emsp;Node.js和Git安装好后，安装Hexo只需下面一句命令：</p>
+<pre><code>$ npm install -g hexo-cli
+</code></pre><p>&emsp;&emsp;Mac用户有时可能出现以下报错：</p>
+<pre><code>➜  ~ npm install -g hexo-cli&lt;/br&gt;
+npm WARN checkPermissions Missing write access to /usr/local/lib/node_modules
+npm ERR! path /usr/local/lib/node_modules&lt;/br&gt;
+npm ERR! code EACCES&lt;/br&gt;
+npm ERR! errno -13&lt;/br&gt;
+npm ERR! syscall access&lt;/br&gt;
+npm ERR! Error: EACCES: permission denied, access &apos;/usr/local/lib/node_modules&apos;&lt;/br&gt;
+npm ERR!  { [Error: EACCES: permission denied, access &apos;/usr/local/lib/node_modules&apos;]&lt;/br&gt;
+npm ERR!   stack:&lt;/br&gt;
+npm ERR!    &apos;Error: EACCES: permission denied, access \&apos;/usr/local/lib/node_modules\&apos;&apos;,&lt;/br&gt;
+npm ERR!   errno: -13,&lt;/br&gt;
+npm ERR!   code: &apos;EACCES&apos;,&lt;/br&gt;
+npm ERR!   syscall: &apos;access&apos;,&lt;/br&gt;
+npm ERR!   path: &apos;/usr/local/lib/node_modules&apos; }&lt;/br&gt;
+npm ERR! &lt;/br&gt;
+npm ERR! The operation was rejected by your operating system.&lt;/br&gt;
+npm ERR! It is likely you do not have the permissions to access this file as the current user&lt;/br&gt;
+npm ERR! &lt;/br&gt;
+npm ERR! If you believe this might be a permissions issue, please double-check the&lt;/br&gt;
+npm ERR! permissions of the file and its containing directories, or try running&lt;/br&gt;
+npm ERR! the command again as root/Administrator (though this is not recommended).&lt;/br&gt;
+&lt;/br&gt;
+npm ERR! A complete log of this run can be found in:&lt;/br&gt;
+npm ERR!     /Users/pluto/.npm/_logs/2018-12-29T21_05_36_404Z-debug.log&lt;/br&gt;
+</code></pre><p>&emsp;&emsp;一个简单的解决方法是直接使用sudo运行上面的命令：</p>
+<pre><code>$ sudo npm install -g hexo-cli 
+</code></pre><p>&emsp;&emsp;或者换到root用户操作。<br><br>&emsp;&emsp;但是npm不建议这样，并提供了官方的<a href="https://docs.npmjs.com/resolving-eacces-permissions-errors-when-installing-packages-globally" target="_blank" rel="noopener">解决办法</a>。<br></p>
+<p>安装好之后，使用下面的命令就可以看到Hexo版本：</p>
+<pre><code>$ hexo version
+</code></pre><h2 id="建站"><a href="#建站" class="headerlink" title="建站"></a>建站</h2><p>&emsp;&emsp;安装好Hexo，我们就可以在本地建站了。<br><br>&emsp;&emsp;在终端找到想要存放Hexo文件的目录，运行：</p>
+<pre><code>$ hexo init [folder]
+</code></pre><p>&emsp;&emsp;OK，这个时候我们就可以在目录下看到新建的Hexo文件夹了。以下是其中一些必要的文件，你的目录中可能还有别的。</p>
+<pre><code>├── _config.yml
+├── scaffolds
+├── source
+|   └── _posts
+└── themes
+</code></pre><p>&emsp;&emsp;我们后面再详细分析每个文件的用途，我们先生成一下静态文件。进到Hexo的文件目录中，运行</p>
+<pre><code>$ hexo generate
+</code></pre><p>&emsp;&emsp;该命令也可以简写为</p>
+<pre><code>$ hexo g
+</code></pre><p>&emsp;&emsp;运行之后，我们可以看到多了一个<code>public</code>文件夹，这玩意儿就是生成的静态网页。然后我们启动本地服务：</p>
+<pre><code>$ hexo server
+</code></pre><p>&emsp;&emsp;同样，可以简写为</p>
+<pre><code>$ hexo s
+</code></pre><p>&emsp;&emsp;现在，打开浏览器，地址栏输入<code>http://localhost:4000</code>，就是本地的服务啦~ 默认的主题是<code>landscape</code>，就长下面这个样子。<br><img src="http://wx4.sinaimg.cn/mw690/eadaa528ly1fyooc9csjgj21jk0u07wh.jpg" alt=""></p>
+<p>&emsp;&emsp;在终端<code>Ctrl</code>+<code>c</code>可以终止本地服务。</p>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>&emsp;&emsp; 好哒~本节内容就到这里，我们已经可以在本地运行Hexo服务了。下一节我们了解Hexo的相关配置。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.plutowang.com/2018/12/28/Hexo教程(1)——搭建本地服务/" data-id="cjqbpjdme00049hu4d7kqunev" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/12/29/Hexo教程(2)——配置与使用/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Hexo上手教程(2)——配置与使用
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/CS/">CS</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/12/29/Hexo教程(3)——部署到GitHub/">Hexo教程(3)——部署到GitHub</a>
+          </li>
+        
+          <li>
+            <a href="/2018/12/29/Hexo教程(2)——配置与使用/">Hexo上手教程(2)——配置与使用</a>
+          </li>
+        
+          <li>
+            <a href="/2018/12/28/Hexo教程(1)——搭建本地服务/">Hexo上手教程(1)——搭建本地服务</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 PlutoWang<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

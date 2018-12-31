@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>Hexo上手教程(2)——配置与使用 | PlutoWang</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="&amp;emsp;&amp;emsp;上一节通过几个简单的命令，我们就搭建了本地Hexo服务。这一节我们看一下配置文件，以及学习如何使用Hexo。">
+<meta name="keywords" content="Hexo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo上手教程(2)——配置与使用">
+<meta property="og:url" content="http://www.plutowang.com/2018/12/29/Hexo教程(2)——配置与使用/index.html">
+<meta property="og:site_name" content="PlutoWang">
+<meta property="og:description" content="&amp;emsp;&amp;emsp;上一节通过几个简单的命令，我们就搭建了本地Hexo服务。这一节我们看一下配置文件，以及学习如何使用Hexo。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-12-31T00:02:31.841Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo上手教程(2)——配置与使用">
+<meta name="twitter:description" content="&amp;emsp;&amp;emsp;上一节通过几个简单的命令，我们就搭建了本地Hexo服务。这一节我们看一下配置文件，以及学习如何使用Hexo。">
+  
+    <link rel="alternate" href="/atom.xml" title="PlutoWang" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">PlutoWang</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://www.plutowang.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Hexo教程(2)——配置与使用" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/12/29/Hexo教程(2)——配置与使用/" class="article-date">
+  <time datetime="2018-12-29T05:00:00.000Z" itemprop="datePublished">2018-12-29</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/CS/">CS</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Hexo上手教程(2)——配置与使用
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>&emsp;&emsp;上一节通过几个简单的命令，我们就搭建了本地Hexo服务。这一节我们看一下配置文件，以及学习如何使用Hexo。</p>
+<a id="more"></a>
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>&emsp;&emsp;这是上一节新建Hexo文件时，我们得到的目录结构。</p>
+<pre><code>├── _config.yml
+├── scaffolds
+├── source
+|   └── _posts
+└── themes
+</code></pre><p>&emsp;&emsp;<code>_config.yml</code>是Hexo的站点配置文件，一会儿详细说。<code>scaffolds</code>目录中是文章和草稿的模板，其中只包含<code>Front-matter</code>，这个词找不到合适的翻译，就把它当做文章头就好了。不用管它，不影响写文章。<code>source</code>目录下还有一个<code>_posts</code>目录，用于存放文章。有时也会有另外两个目录，<code>_drafts</code>和<code>_pages</code>，分别存放草稿和网页。<code>themes</code>中存放我们选择的主题。默认主题是<code>landscape</code>。<br><br>&emsp;&emsp;我们着重看<code>_config.yml</code>和<code>themes</code>。</p>
+<h3 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h3><p>&emsp;&emsp;<code>_config.yml</code>文件包含了大部分配置，但其实很多是不需要修改的。我们详细看一下。</p>
+<h4 id="Site"><a href="#Site" class="headerlink" title="Site"></a>Site</h4><p>&emsp;&emsp;Site下主要是站点信息。不同版本的Hexo可能会多一些或者少一些，没有关系的。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">标签</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">title</td>
+<td style="text-align:left">网站标题</td>
+</tr>
+<tr>
+<td style="text-align:left">subtitle</td>
+<td style="text-align:left">网站副标题</td>
+</tr>
+<tr>
+<td style="text-align:left">description</td>
+<td style="text-align:left">网站描述</td>
+</tr>
+<tr>
+<td style="text-align:left">keywords</td>
+<td style="text-align:left">网站关键字</td>
+</tr>
+<tr>
+<td style="text-align:left">author</td>
+<td style="text-align:left">作者</td>
+</tr>
+<tr>
+<td style="text-align:left">language</td>
+<td style="text-align:left">语言</td>
+</tr>
+<tr>
+<td style="text-align:left">timezone</td>
+<td style="text-align:left">时区</td>
+</tr>
+</tbody>
+</table>
+<p>&emsp;&emsp; <code>description</code>，<code>keywords</code>都是用于SEO，告诉搜说引擎该站点的描述。如果你想让你的博客被搜索引擎优先展示，那么优化SEO是必不可少的。<code>language</code>可以设为<code>zh-Hans</code>，表示中文。<code>timezone</code>可以不写，默认使用电脑时区。<strong>描述和:之间要有空格！</strong></p>
+<h4 id="URL"><a href="#URL" class="headerlink" title="URL"></a>URL</h4><p>&emsp;&emsp;URL下是有关网址的信息。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">标签</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">url</td>
+<td style="text-align:left">网址</td>
+</tr>
+<tr>
+<td style="text-align:left">root</td>
+<td style="text-align:left">网站根目录</td>
+</tr>
+<tr>
+<td style="text-align:left">permalink</td>
+<td style="text-align:left">文章永久链接格式</td>
+</tr>
+<tr>
+<td style="text-align:left">permalink_defaults</td>
+<td style="text-align:left">网站描述</td>
+</tr>
+</tbody>
+</table>
+<p>&emsp;&emsp;这里的<code>root</code>是Hexo站点的根目录。例如你的网站存放在一个子目录 <code>http://yoursite.com/blog</code>中，那么就把<code>root</code>设为<code>/blog/</code>。<br><br>&emsp;&emsp;永久链接格式默认为<code>:year/:month/:day/:title/</code>，如果你想把它改成分类地址的话，就是<code>:category/:title/</code>。永久链接中的变量还可以使用<a href="https://hexo.io/zh-cn/docs/permalinks" target="_blank" rel="noopener">其他变量</a>，但是注意变量<code>:id</code>。这个id每次在你生成静态网页时，也就是运行<code>hexo g</code>时都会重新分配。而有些评论插件，就是靠id来识别文章的，id变化之后评论可能出现混乱。BTW，不知道煎蛋网评论时出现的“页面ID错误”是不是这种情况。</p>
+<h4 id="Directory"><a href="#Directory" class="headerlink" title="Directory"></a>Directory</h4><p>&emsp;&emsp;这部分是目录的配置，不要改。</p>
+<h4 id="Writing"><a href="#Writing" class="headerlink" title="Writing"></a>Writing</h4><p>&emsp;&emsp;这部分是文章写作的配置。也没有改动的必要。</p>
+<h4 id="Category-amp-Tag"><a href="#Category-amp-Tag" class="headerlink" title="Category &amp; Tag"></a>Category &amp; Tag</h4><p>&emsp;&emsp;可以在这里添加标签或者分类的别名，但是一般用不上呢。</p>
+<h4 id="Date-Time-format"><a href="#Date-Time-format" class="headerlink" title="Date / Time format"></a>Date / Time format</h4><p>&emsp;&emsp;默认值也很好了。</p>
+<h4 id="Pagination"><a href="#Pagination" class="headerlink" title="Pagination"></a>Pagination</h4><p>&emsp;&emsp;<code>per_page</code>这个变量可以随意改，<code>pagination_dir</code>就不要动了。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">标签</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">per_page</td>
+<td style="text-align:left">每页文章数</td>
+</tr>
+<tr>
+<td style="text-align:left">pagination_dir</td>
+<td style="text-align:left">分页目录</td>
+</tr>
+</tbody>
+</table>
+<h4 id="Extensions"><a href="#Extensions" class="headerlink" title="Extensions"></a>Extensions</h4><p>&emsp;&emsp;这里只有一个标签，就是主题。你的<code>theme</code>目录下可以存放多个主题，但是只能用一个，就是在这里选择要使用的那一个。</p>
+<h4 id="Deployment"><a href="#Deployment" class="headerlink" title="Deployment"></a>Deployment</h4><p>&emsp;&emsp;用于部署，我们下一节再讲这里。</p>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p>&emsp;&emsp;Hexo的使用其实就是写文章与发文章。对于写文章，官方的方法是通过下面的命令新建文章：<br></p>
+<pre><code>$ hexo new [layout] &lt;title&gt;
+</code></pre><p>&emsp;&emsp;这句命令其实就是在文章目录下新建一个markdown文件，和手动添加几乎一样，唯一的区别就是把模板上的Front matter给你写好了。<br>&emsp;&emsp;至于<code>draft</code>我感觉用处不大，所以就不说了，直接写文章就好。写好了再发布，和草稿不是一样嘛。</p>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>&emsp;&emsp;除了根目录下的<code>_config.yml</code>，我们会发现主题文件夹下也有一个<code>_config.yml</code>，那个是有关主题，更细节的配置。我们第四节再讲。下一节我们讲Hexo部署。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.plutowang.com/2018/12/29/Hexo教程(2)——配置与使用/" data-id="cjqbpjdm900019hu4psrz9rih" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/12/29/Hexo教程(3)——部署到GitHub/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Hexo教程(3)——部署到GitHub
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/12/28/Hexo教程(1)——搭建本地服务/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Hexo上手教程(1)——搭建本地服务</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/CS/">CS</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/12/29/Hexo教程(3)——部署到GitHub/">Hexo教程(3)——部署到GitHub</a>
+          </li>
+        
+          <li>
+            <a href="/2018/12/29/Hexo教程(2)——配置与使用/">Hexo上手教程(2)——配置与使用</a>
+          </li>
+        
+          <li>
+            <a href="/2018/12/28/Hexo教程(1)——搭建本地服务/">Hexo上手教程(1)——搭建本地服务</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 PlutoWang<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
