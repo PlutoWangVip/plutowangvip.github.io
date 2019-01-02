@@ -106,18 +106,20 @@
 
 
 
-  <meta name="description" content="&amp;emsp;&amp;emsp;上一节通过几个简单的命令，我们就搭建了本地Hexo服务。这一节我们看一下配置文件，以及学习如何使用Hexo。">
+  <meta name="description" content="&amp;emsp;&amp;emsp;我们之前的工作是在本地搭建的Hexo服务，只有自己能看到。如果想让别人也能访问到你的博客，就必须部署在服务器上。但是仅仅为了一个静态网站就租一个服务器，不仅配置麻烦，而且还花钱。有很多平台提供静态网站托管服务，这里选择了GitHub Pages。今天就介绍如何把本地Hexo部署到GitHub上。">
 <meta name="keywords" content="Hexo">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo教程(2)——配置与使用">
-<meta property="og:url" content="http://www.plutowang.com/2018/12/29/Hexo教程(2)——配置与使用/index.html">
+<meta property="og:title" content="Hexo教程(3)——部署到GitHub">
+<meta property="og:url" content="http://www.plutowang.com/2018/12/30/Hexo教程(3)——部署到GitHub/index.html">
 <meta property="og:site_name" content="PlutoWang">
-<meta property="og:description" content="&amp;emsp;&amp;emsp;上一节通过几个简单的命令，我们就搭建了本地Hexo服务。这一节我们看一下配置文件，以及学习如何使用Hexo。">
+<meta property="og:description" content="&amp;emsp;&amp;emsp;我们之前的工作是在本地搭建的Hexo服务，只有自己能看到。如果想让别人也能访问到你的博客，就必须部署在服务器上。但是仅仅为了一个静态网站就租一个服务器，不仅配置麻烦，而且还花钱。有很多平台提供静态网站托管服务，这里选择了GitHub Pages。今天就介绍如何把本地Hexo部署到GitHub上。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-01-02T03:59:06.459Z">
+<meta property="og:image" content="http://wx3.sinaimg.cn/mw690/eadaa528ly1fys020dwmfj217i0fk416.jpg">
+<meta property="og:updated_time" content="2019-01-02T20:02:28.378Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo教程(2)——配置与使用">
-<meta name="twitter:description" content="&amp;emsp;&amp;emsp;上一节通过几个简单的命令，我们就搭建了本地Hexo服务。这一节我们看一下配置文件，以及学习如何使用Hexo。">
+<meta name="twitter:title" content="Hexo教程(3)——部署到GitHub">
+<meta name="twitter:description" content="&amp;emsp;&amp;emsp;我们之前的工作是在本地搭建的Hexo服务，只有自己能看到。如果想让别人也能访问到你的博客，就必须部署在服务器上。但是仅仅为了一个静态网站就租一个服务器，不仅配置麻烦，而且还花钱。有很多平台提供静态网站托管服务，这里选择了GitHub Pages。今天就介绍如何把本地Hexo部署到GitHub上。">
+<meta name="twitter:image" content="http://wx3.sinaimg.cn/mw690/eadaa528ly1fys020dwmfj217i0fk416.jpg">
 
 
 
@@ -126,7 +128,7 @@
 
 
 
-  <link rel="canonical" href="http://www.plutowang.com/2018/12/29/Hexo教程(2)——配置与使用/">
+  <link rel="canonical" href="http://www.plutowang.com/2018/12/30/Hexo教程(3)——部署到GitHub/">
 
 
 
@@ -136,7 +138,7 @@
   };
 </script>
 
-  <title>Hexo教程(2)——配置与使用 | PlutoWang</title>
+  <title>Hexo教程(3)——部署到GitHub | PlutoWang</title>
   
 
 
@@ -334,7 +336,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.plutowang.com/2018/12/29/Hexo教程(2)——配置与使用/">
+    <link itemprop="mainEntityOfPage" href="http://www.plutowang.com/2018/12/30/Hexo教程(3)——部署到GitHub/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="PlutoWang">
@@ -351,7 +353,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Hexo教程(2)——配置与使用</h1>
+          <h1 class="post-title" itemprop="name headline">Hexo教程(3)——部署到GitHub</h1>
         
 
         <div class="post-meta">
@@ -363,7 +365,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-29T00:00:00-05:00">2018-12-29</time>
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-30T00:00:00-05:00">2018-12-30</time>
             
 
             
@@ -418,113 +420,44 @@
       
 
       
-        <p>&emsp;&emsp;上一节通过几个简单的命令，我们就搭建了本地Hexo服务。这一节我们看一下配置文件，以及学习如何使用Hexo。</p>
+        <p>&emsp;&emsp;我们之前的工作是在本地搭建的Hexo服务，只有自己能看到。如果想让别人也能访问到你的博客，就必须部署在服务器上。但是仅仅为了一个静态网站就租一个服务器，不仅配置麻烦，而且还花钱。有很多平台提供静态网站托管服务，这里选择了GitHub Pages。今天就介绍如何把本地Hexo部署到GitHub上。</p>
 <a id="more"></a>
-<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>&emsp;&emsp;这是上一节新建Hexo文件时，我们得到的目录结构。</p>
-<pre><code>├── _config.yml
-├── scaffolds
-├── source
-|   └── _posts
-└── themes
-</code></pre><p>&emsp;&emsp;<code>_config.yml</code>是Hexo的站点配置文件，一会儿详细说。<code>scaffolds</code>目录中是文章和草稿的模板，其中只包含<code>Front-matter</code>，这个词找不到合适的翻译，就把它当做文章头就好了。不用管它，不影响写文章。<code>source</code>目录下还有一个<code>_posts</code>目录，用于存放文章。有时也会有另外两个目录，<code>_drafts</code>和<code>_pages</code>，分别存放草稿和网页。<code>themes</code>中存放我们选择的主题。默认主题是<code>landscape</code>。<br><br>&emsp;&emsp;我们着重看<code>_config.yml</code>和<code>themes</code>。</p>
-<h3 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h3><p>&emsp;&emsp;<code>_config.yml</code>文件包含了大部分配置，但其实很多是不需要修改的。我们详细看一下。</p>
-<h4 id="Site"><a href="#Site" class="headerlink" title="Site"></a>Site</h4><p>&emsp;&emsp;Site下主要是站点信息。不同版本的Hexo可能会多一些或者少一些，没有关系的。</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">标签</th>
-<th style="text-align:left">描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">title</td>
-<td style="text-align:left">网站标题</td>
-</tr>
-<tr>
-<td style="text-align:left">subtitle</td>
-<td style="text-align:left">网站副标题</td>
-</tr>
-<tr>
-<td style="text-align:left">description</td>
-<td style="text-align:left">网站描述</td>
-</tr>
-<tr>
-<td style="text-align:left">keywords</td>
-<td style="text-align:left">网站关键字</td>
-</tr>
-<tr>
-<td style="text-align:left">author</td>
-<td style="text-align:left">作者</td>
-</tr>
-<tr>
-<td style="text-align:left">language</td>
-<td style="text-align:left">语言</td>
-</tr>
-<tr>
-<td style="text-align:left">timezone</td>
-<td style="text-align:left">时区</td>
-</tr>
-</tbody>
-</table>
-<p>&emsp;&emsp; <code>description</code>，<code>keywords</code>都是用于SEO，告诉搜说引擎该站点的描述。如果你想让你的博客被搜索引擎优先展示，那么优化SEO是必不可少的。<code>language</code>可以设为<code>zh-Hans</code>，表示中文。<code>timezone</code>可以不写，默认使用电脑时区。<strong>描述和:之间要有空格！</strong></p>
-<h4 id="URL"><a href="#URL" class="headerlink" title="URL"></a>URL</h4><p>&emsp;&emsp;URL下是有关网址的信息。</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">标签</th>
-<th style="text-align:left">描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">url</td>
-<td style="text-align:left">网址</td>
-</tr>
-<tr>
-<td style="text-align:left">root</td>
-<td style="text-align:left">网站根目录</td>
-</tr>
-<tr>
-<td style="text-align:left">permalink</td>
-<td style="text-align:left">文章永久链接格式</td>
-</tr>
-<tr>
-<td style="text-align:left">permalink_defaults</td>
-<td style="text-align:left">网站描述</td>
-</tr>
-</tbody>
-</table>
-<p>&emsp;&emsp;这里的<code>root</code>是Hexo站点的根目录。例如你的网站存放在一个子目录 <code>http://yoursite.com/blog</code>中，那么就把<code>root</code>设为<code>/blog/</code>。<br><br>&emsp;&emsp;永久链接格式默认为<code>:year/:month/:day/:title/</code>，如果你想把它改成分类地址的话，就是<code>:category/:title/</code>。永久链接中的变量还可以使用<a href="https://hexo.io/zh-cn/docs/permalinks" target="_blank" rel="noopener">其他变量</a>，但是注意变量<code>:id</code>。这个id每次在你生成静态网页时，也就是运行<code>hexo g</code>时都会重新分配。而有些评论插件，就是靠id来识别文章的，id变化之后评论可能出现混乱。BTW，不知道煎蛋网评论时出现的“页面ID错误”是不是这种情况。</p>
-<h4 id="Directory"><a href="#Directory" class="headerlink" title="Directory"></a>Directory</h4><p>&emsp;&emsp;这部分是目录的配置，不要改。</p>
-<h4 id="Writing"><a href="#Writing" class="headerlink" title="Writing"></a>Writing</h4><p>&emsp;&emsp;这部分是文章写作的配置。也没有改动的必要。</p>
-<h4 id="Category-amp-Tag"><a href="#Category-amp-Tag" class="headerlink" title="Category &amp; Tag"></a>Category &amp; Tag</h4><p>&emsp;&emsp;可以在这里添加标签或者分类的别名，但是一般用不上呢。</p>
-<h4 id="Date-Time-format"><a href="#Date-Time-format" class="headerlink" title="Date / Time format"></a>Date / Time format</h4><p>&emsp;&emsp;默认值也很好了。</p>
-<h4 id="Pagination"><a href="#Pagination" class="headerlink" title="Pagination"></a>Pagination</h4><p>&emsp;&emsp;<code>per_page</code>这个变量可以随意改，<code>pagination_dir</code>就不要动了。</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">标签</th>
-<th style="text-align:left">描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">per_page</td>
-<td style="text-align:left">每页文章数</td>
-</tr>
-<tr>
-<td style="text-align:left">pagination_dir</td>
-<td style="text-align:left">分页目录</td>
-</tr>
-</tbody>
-</table>
-<h4 id="Extensions"><a href="#Extensions" class="headerlink" title="Extensions"></a>Extensions</h4><p>&emsp;&emsp;这里只有一个标签，就是主题。你的<code>theme</code>目录下可以存放多个主题，但是只能用一个，就是在这里选择要使用的那一个。</p>
-<h4 id="Deployment"><a href="#Deployment" class="headerlink" title="Deployment"></a>Deployment</h4><p>&emsp;&emsp;用于部署，我们下一节再讲这里。</p>
-<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p>&emsp;&emsp;Hexo的使用其实就是写文章与发文章。对于写文章，官方的方法是通过下面的命令新建文章：<br></p>
-<pre><code>$ hexo new [layout] &lt;title&gt;
-</code></pre><p>&emsp;&emsp;这句命令其实就是在文章目录下新建一个markdown文件，和手动添加几乎一样，唯一的区别就是把模板上的Front matter给你写好了。<br>&emsp;&emsp;至于<code>draft</code>我感觉用处不大，所以就不说了，直接写文章就好。写好了再发布，和草稿不是一样嘛。</p>
-<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>&emsp;&emsp;除了根目录下的<code>_config.yml</code>，我们会发现主题文件夹下也有一个<code>_config.yml</code>，那个是有关主题，更细节的配置。我们第四节再讲。下一节我们讲Hexo部署。</p>
+<h2 id="部署到GitHub"><a href="#部署到GitHub" class="headerlink" title="部署到GitHub"></a>部署到GitHub</h2><h3 id="创建GitHub仓库"><a href="#创建GitHub仓库" class="headerlink" title="创建GitHub仓库"></a>创建GitHub仓库</h3><p>&emsp;&emsp;作为全球最大同性交友社区，GitHub也提供个人博客托管服务。不会用GitHub的也不要紧张，以下都是很基础的操作。<br>&emsp;&emsp;首先注册一个GitHub账户，然后创建一个名为[账户名.github.io]的仓库(repository)，这是固定写法。</p>
+<h3 id="与GitHub连接"><a href="#与GitHub连接" class="headerlink" title="与GitHub连接"></a>与GitHub连接</h3><p>&emsp;&emsp;GitHub不接受非法的提交，所以本地必须与GitHub账户相联。首先打开终端，输入以下命令：<br></p>
+<pre><code>$ git config --global user.name [你的GitHub用户名]
+$ git config --global user.email [你的GitHub注册邮箱] 
+</code></pre><p>&emsp;&emsp;本地通过SSH与GitHub相联，所以需要生成一个SSH key，会产生一个公钥和一个私钥，公钥提交到GitHub账户上，私钥自己保留。生成新的key之前，先检查一下有没有旧的。</p>
+<pre><code>$ cd ~/.ssh
+</code></pre><p>&emsp;&emsp;如果显示<code>No such file or directory</code>，那就表示没有。如果有，就会跳转到<code>ssh</code>目录下，我们需要把旧的删掉：</p>
+<pre><code>$ rm id_rsa*
+</code></pre><p>&emsp;&emsp;删之前也可以备份一下哦。然后就可以生成新的key了：</p>
+<pre><code>$ ssh-keygen -t rsa -C [你的GitHub注册邮箱]
+</code></pre><p>&emsp;&emsp;系统会提示你添加加密串，可以不添加的，直接三个回车跳过。<br><br>&emsp;&emsp;然后就可以在<code>~/.ssh</code>目录下找到新生成的<code>id_rsa</code>和<code>id_rsa.pub</code>。在GitHub的setting中，有一个SSH keys的选项，在那里新建一个SSH Key，Title随意填，把<code>id_rsa.pub</code>文件里的内容粘贴到Key栏。最后点击添加即可。最后我们测试一下：</p>
+<pre><code>$ ssh -T git@github.com
+</code></pre><p>&emsp;&emsp;出现<code>You&#39;ve successfully authenticated, but GitHub does not provide shell access.</code>说明连接成功。</p>
+<h3 id="部署到GitHub-1"><a href="#部署到GitHub-1" class="headerlink" title="部署到GitHub"></a>部署到GitHub</h3><p>&emsp;&emsp;下面我们将Hexo与GitHub相联。<br><br>&emsp;&emsp;还记得上一节的配置文件<code>_config.yml</code>吧，里面有一个<code>deploy</code>选项，请按如下方式填写：</p>
+<pre><code>deploy:
+  type: git
+  repo: https://github.com/[GitHub账户名]/[GitHub账户名].github.io.git
+  branch: master
+</code></pre><p>&emsp;&emsp;下一步，在终端安装Git部署插件</p>
+<pre><code>$ npm install hexo-deployer-git --save
+</code></pre><p>&emsp;&emsp;最后我们输入运行以下三个命令，作用分别是清理旧文件，生成新的静态网页和部署。</p>
+<pre><code>$ hexo clean 
+$ hexo g 
+$ hexo d
+</code></pre><p>&emsp;&emsp;OK！部署成功，在浏览器地址栏输入你的仓库名，就可以看到你的博客啦！</p>
+<h2 id="绑定域名"><a href="#绑定域名" class="headerlink" title="绑定域名"></a>绑定域名</h2><p>&emsp;&emsp;我们现在的博客网址是GitHub提供的，有时候我们更想要一个属于自己的域名。这部分不难，但是要一步一步来。</p>
+<h3 id="买域名"><a href="#买域名" class="headerlink" title="买域名"></a>买域名</h3><p>&emsp;&emsp;域名服务商有很多，我只用过GoDaddy，还可以，不过风评好像一般般。我没用过别的，所以不评价别的。而且GoDaddy已经不支持SOPA了，用起来不会被谴责。</p>
+<h3 id="DNS设置"><a href="#DNS设置" class="headerlink" title="DNS设置"></a>DNS设置</h3><p>&emsp;&emsp; 我们不用GoDaddy的DNS服务，因为其默认DNS在国内好像ping的延时比较大。这里我用的<a href="https://www.dnspod.cn/" target="_blank" rel="noopener">DNSpod</a>，很稳。<br><br>&emsp;&emsp; 注册好后，添加自己刚刚买的域名。按下图所示添加记录(除了最后一行的记录值)。</p>
+<p><img src="http://wx3.sinaimg.cn/mw690/eadaa528ly1fys020dwmfj217i0fk416.jpg" alt=""></p>
+<p>&emsp;&emsp; 注意前两行的记录值，其实是GitHub Page的IP地址。最后一行的记录值，换成你自己的仓库地址。<br></p>
+<p>&emsp;&emsp;回到GoDaddy，找到你的域名的DNS管理，使用自定义域名服务器。添加如下两个域名服务器地址：</p>
+<pre><code>f1g1ns1.dnspod.net
+f1g1ns2.dnspod.net
+</code></pre><h3 id="域名绑定"><a href="#域名绑定" class="headerlink" title="域名绑定"></a>域名绑定</h3><p>&emsp;&emsp;最后一步，在你的Hexo的<code>source</code>目录下，创建一个名为<code>CNAME</code>的文件，<strong>注意，没有后缀</strong>。里面只写自己买的域名，建议不加<code>www.</code>，只写<code>域名.com</code>。<br><br>&emsp;&emsp;好啦~试一试，到终端重新生成一遍，再发布一下。最后到浏览器地址栏敲入自己的域名，就能看到自己的博客啦~(看不到也没关系，DNS有延迟，等一等就好了。)</p>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>&emsp;&emsp;今天介绍了如何把本地Hexo服务部署到GitHub上，并绑定自己的域名。下节我们介绍主题的定制。我用的是Next主题。</p>
+<p>&emsp;&emsp;元旦快乐~</p>
 
       
     </div>
@@ -546,7 +479,7 @@
     <strong>本文作者： </strong>PlutoWang</li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://www.plutowang.com/2018/12/29/Hexo教程(2)——配置与使用/" title="Hexo教程(2)——配置与使用">http://www.plutowang.com/2018/12/29/Hexo教程(2)——配置与使用/</a>
+    <a href="http://www.plutowang.com/2018/12/30/Hexo教程(3)——部署到GitHub/" title="Hexo教程(3)——部署到GitHub">http://www.plutowang.com/2018/12/30/Hexo教程(3)——部署到GitHub/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 CC BY-NC-SA 3.0 许可协议。转载请注明出处！</li>
@@ -572,8 +505,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/12/28/Hexo教程(1)——搭建本地服务/" rel="next" title="Hexo教程(1)——搭建本地服务">
-                <i class="fa fa-chevron-left"></i> Hexo教程(1)——搭建本地服务
+              <a href="/2018/12/29/Hexo教程(2)——配置与使用/" rel="next" title="Hexo教程(2)——配置与使用">
+                <i class="fa fa-chevron-left"></i> Hexo教程(2)——配置与使用
               </a>
             
           </div>
@@ -582,8 +515,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/12/30/Hexo教程(3)——部署到GitHub/" rel="prev" title="Hexo教程(3)——部署到GitHub">
-                Hexo教程(3)——部署到GitHub <i class="fa fa-chevron-right"></i>
+              <a href="/2018/12/31/Hexo教程(4)——Next主题优化/" rel="prev" title="Hexo教程(4)——Next主题优化">
+                Hexo教程(4)——Next主题优化 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -771,7 +704,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#配置"><span class="nav-number">1.</span> <span class="nav-text">配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#配置文件"><span class="nav-number">1.1.</span> <span class="nav-text">配置文件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Site"><span class="nav-number">1.1.1.</span> <span class="nav-text">Site</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#URL"><span class="nav-number">1.1.2.</span> <span class="nav-text">URL</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Directory"><span class="nav-number">1.1.3.</span> <span class="nav-text">Directory</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Writing"><span class="nav-number">1.1.4.</span> <span class="nav-text">Writing</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Category-amp-Tag"><span class="nav-number">1.1.5.</span> <span class="nav-text">Category &amp; Tag</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Date-Time-format"><span class="nav-number">1.1.6.</span> <span class="nav-text">Date / Time format</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Pagination"><span class="nav-number">1.1.7.</span> <span class="nav-text">Pagination</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Extensions"><span class="nav-number">1.1.8.</span> <span class="nav-text">Extensions</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Deployment"><span class="nav-number">1.1.9.</span> <span class="nav-text">Deployment</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用"><span class="nav-number">2.</span> <span class="nav-text">使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小结"><span class="nav-number">3.</span> <span class="nav-text">小结</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#部署到GitHub"><span class="nav-number">1.</span> <span class="nav-text">部署到GitHub</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建GitHub仓库"><span class="nav-number">1.1.</span> <span class="nav-text">创建GitHub仓库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#与GitHub连接"><span class="nav-number">1.2.</span> <span class="nav-text">与GitHub连接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#部署到GitHub-1"><span class="nav-number">1.3.</span> <span class="nav-text">部署到GitHub</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#绑定域名"><span class="nav-number">2.</span> <span class="nav-text">绑定域名</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#买域名"><span class="nav-number">2.1.</span> <span class="nav-text">买域名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DNS设置"><span class="nav-number">2.2.</span> <span class="nav-text">DNS设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#域名绑定"><span class="nav-number">2.3.</span> <span class="nav-text">域名绑定</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小结"><span class="nav-number">3.</span> <span class="nav-text">小结</span></a></li></ol></div>
             
 
           </div>
