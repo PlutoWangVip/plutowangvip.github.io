@@ -15,10 +15,12 @@
 <meta property="og:site_name" content="PlutoWang">
 <meta property="og:description" content="&amp;emsp;&amp;emsp;我们之前的工作是在本地搭建的Hexo服务，只有自己能看到。如果想让别人也能访问到你的博客，就必须部署在服务器上。但是仅仅为了一个静态网站就租一个服务器，不仅配置麻烦，而且还花钱。有很多平台提供静态网站托管服务，这里选择了GitHub Pages。今天就介绍如何把本地Hexo部署到GitHub上。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-01-01T23:02:10.532Z">
+<meta property="og:image" content="http://wx3.sinaimg.cn/mw690/eadaa528ly1fys020dwmfj217i0fk416.jpg">
+<meta property="og:updated_time" content="2019-01-02T02:55:17.006Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo教程(3)——部署到GitHub">
 <meta name="twitter:description" content="&amp;emsp;&amp;emsp;我们之前的工作是在本地搭建的Hexo服务，只有自己能看到。如果想让别人也能访问到你的博客，就必须部署在服务器上。但是仅仅为了一个静态网站就租一个服务器，不仅配置麻烦，而且还花钱。有很多平台提供静态网站托管服务，这里选择了GitHub Pages。今天就介绍如何把本地Hexo部署到GitHub上。">
+<meta name="twitter:image" content="http://wx3.sinaimg.cn/mw690/eadaa528ly1fys020dwmfj217i0fk416.jpg">
   
     <link rel="alternate" href="/atom.xml" title="PlutoWang" type="application/atom+xml">
   
@@ -118,12 +120,22 @@ $ git config --global user.email [你的GitHub注册邮箱]
 $ hexo g 
 $ hexo d
 </code></pre><p>&emsp;&emsp;OK！部署成功，在浏览器地址栏输入你的仓库名，就可以看到你的博客啦！</p>
-<h2 id="绑定域名"><a href="#绑定域名" class="headerlink" title="绑定域名"></a>绑定域名</h2><p>&emsp;&emsp;我们现在的博客网址是GitHub提供的，有时候我们更想要一个属于自己的域名。</p>
+<h2 id="绑定域名"><a href="#绑定域名" class="headerlink" title="绑定域名"></a>绑定域名</h2><p>&emsp;&emsp;我们现在的博客网址是GitHub提供的，有时候我们更想要一个属于自己的域名。这部分不难，但是要一步一步来。</p>
+<h3 id="买域名"><a href="#买域名" class="headerlink" title="买域名"></a>买域名</h3><p>&emsp;&emsp;域名服务商有很多，我只用过GoDaddy，还可以，不过风评好像一般般。我没用过别的，所以不评价别的。而且GoDaddy已经不支持SOPA了，用起来不会被谴责。</p>
+<h3 id="DNS设置"><a href="#DNS设置" class="headerlink" title="DNS设置"></a>DNS设置</h3><p>&emsp;&emsp; 我们不用GoDaddy的DNS服务，因为其默认DNS在国内好像ping的延时比较大。这里我用的<a href="https://www.dnspod.cn/" target="_blank" rel="noopener">DNSpod</a>，很稳。<br><br>&emsp;&emsp; 注册好后，添加自己刚刚买的域名。按下图所示添加记录(除了最后一行的记录值)。</p>
+<p><img src="http://wx3.sinaimg.cn/mw690/eadaa528ly1fys020dwmfj217i0fk416.jpg" alt=""></p>
+<p>&emsp;&emsp; 注意前两行的记录值，其实是GitHub Page的IP地址。最后一行的记录值，换成你自己的仓库地址。<br></p>
+<p>&emsp;&emsp;回到GoDaddy，找到你的域名的DNS管理，使用自定义域名服务器。添加如下两个域名服务器地址：</p>
+<pre><code>f1g1ns1.dnspod.net
+f1g1ns2.dnspod.net
+</code></pre><h3 id="域名绑定"><a href="#域名绑定" class="headerlink" title="域名绑定"></a>域名绑定</h3><p>&emsp;&emsp;最后一步，在你的Hexo的<code>source</code>目录下，创建一个名为<code>CNAME</code>的文件，<strong>注意，没有后缀</strong>。里面只写自己买的域名，建议不加<code>www.</code>，只写<code>域名.com</code>。<br><br>&emsp;&emsp;好啦~试一试，到终端重新生成一遍，再发布一下。最后到浏览器地址栏敲入自己的域名，就能看到自己的博客啦~(看不到也没关系，DNS有延迟，等一等就好了。)</p>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>&emsp;&emsp;今天介绍了如何把本地Hexo服务部署到GitHub上，并绑定自己的域名。下节我们介绍主题的定制。我用的是Next主题。</p>
+<p>&emsp;&emsp;元旦快乐~</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.plutowang.com/2018/12/29/Hexo教程(3)——部署到GitHub/" data-id="cjqedhnsx0000xpu4kff8qsc4" class="article-share-link">Share</a>
+      <a data-url="http://www.plutowang.com/2018/12/29/Hexo教程(3)——部署到GitHub/" data-id="cjqela6ip00000du46utvnv6z" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>
