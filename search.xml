@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[Hexo教程(4)——Next主题优化]]></title>
+    <url>%2F2018%2F12%2F31%2FHexo%E6%95%99%E7%A8%8B(4)%E2%80%94%E2%80%94Next%E4%B8%BB%E9%A2%98%E4%BC%98%E5%8C%96%2F</url>
+    <content type="text"><![CDATA[&emsp;&emsp;其实前三节我们基本上已经可以使用Hexo了。但是大部分人肯定不会满足于默认模板的。今天的主题优化基于Next主题，因为这个主题很好看，而且用的人多，优化也多。 Hexo主题&emsp;&emsp;Hexo主题十分丰富，而且还在不断更新，不断有新的主题加入。你可以选择任何一个喜欢的。我使用的是Next主题，这个主题十分经典，而且网上有大量针对这个主题的使用方法和优化方案。&emsp;&emsp;更换主题的方式在第二讲中提到过：将下载好的主题文件夹放在theme目录下，再把_config.yml配置文件中的theme改为选中的主题文件夹的名字。 更新&emsp;&emsp;我本来是想写Next的主题优化的，但是实在太碎了哎！写完发现非常没有条理，像字典一样。给大家两个链接好了，写得很棒。不排除我哪天想通了，接着写下去。 Next官方使用说明 知乎路人S]]></content>
+      <categories>
+        <category>CS</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Hexo教程(3)——部署到GitHub]]></title>
+    <url>%2F2018%2F12%2F30%2FHexo%E6%95%99%E7%A8%8B(3)%E2%80%94%E2%80%94%E9%83%A8%E7%BD%B2%E5%88%B0GitHub%2F</url>
+    <content type="text"><![CDATA[&emsp;&emsp;我们之前的工作是在本地搭建的Hexo服务，只有自己能看到。如果想让别人也能访问到你的博客，就必须部署在服务器上。但是仅仅为了一个静态网站就租一个服务器，不仅配置麻烦，而且还花钱。有很多平台提供静态网站托管服务，这里选择了GitHub Pages。今天就介绍如何把本地Hexo部署到GitHub上。 部署到GitHub创建GitHub仓库&emsp;&emsp;作为全球最大同性交友社区，GitHub也提供个人博客托管服务。不会用GitHub的也不要紧张，以下都是很基础的操作。&emsp;&emsp;首先注册一个GitHub账户，然后创建一个名为[账户名.github.io]的仓库(repository)，这是固定写法。 与GitHub连接&emsp;&emsp;GitHub不接受非法的提交，所以本地必须与GitHub账户相联。首先打开终端，输入以下命令： $ git config --global user.name [你的GitHub用户名] $ git config --global user.email [你的GitHub注册邮箱] &emsp;&emsp;本地通过SSH与GitHub相联，所以需要生成一个SSH key，会产生一个公钥和一个私钥，公钥提交到GitHub账户上，私钥自己保留。生成新的key之前，先检查一下有没有旧的。 $ cd ~/.ssh &emsp;&emsp;如果显示No such file or directory，那就表示没有。如果有，就会跳转到ssh目录下，我们需要把旧的删掉： $ rm id_rsa* &emsp;&emsp;删之前也可以备份一下哦。然后就可以生成新的key了： $ ssh-keygen -t rsa -C [你的GitHub注册邮箱] &emsp;&emsp;系统会提示你添加加密串，可以不添加的，直接三个回车跳过。&emsp;&emsp;然后就可以在~/.ssh目录下找到新生成的id_rsa和id_rsa.pub。在GitHub的setting中，有一个SSH keys的选项，在那里新建一个SSH Key，Title随意填，把id_rsa.pub文件里的内容粘贴到Key栏。最后点击添加即可。最后我们测试一下： $ ssh -T git@github.com &emsp;&emsp;出现You&#39;ve successfully authenticated, but GitHub does not provide shell access.说明连接成功。 部署到GitHub&emsp;&emsp;下面我们将Hexo与GitHub相联。&emsp;&emsp;还记得上一节的配置文件_config.yml吧，里面有一个deploy选项，请按如下方式填写： deploy: type: git repo: https://github.com/[GitHub账户名]/[GitHub账户名].github.io.git branch: master &emsp;&emsp;下一步，在终端安装Git部署插件 $ npm install hexo-deployer-git --save &emsp;&emsp;最后我们输入运行以下三个命令，作用分别是清理旧文件，生成新的静态网页和部署。 $ hexo clean $ hexo g $ hexo d &emsp;&emsp;OK！部署成功，在浏览器地址栏输入你的仓库名，就可以看到你的博客啦！ 绑定域名&emsp;&emsp;我们现在的博客网址是GitHub提供的，有时候我们更想要一个属于自己的域名。这部分不难，但是要一步一步来。 买域名&emsp;&emsp;域名服务商有很多，我只用过GoDaddy，还可以，不过风评好像一般般。我没用过别的，所以不评价别的。而且GoDaddy已经不支持SOPA了，用起来不会被谴责。 DNS设置&emsp;&emsp; 我们不用GoDaddy的DNS服务，因为其默认DNS在国内好像ping的延时比较大。这里我用的DNSpod，很稳。&emsp;&emsp; 注册好后，添加自己刚刚买的域名。按下图所示添加记录(除了最后一行的记录值)。 &emsp;&emsp; 注意前两行的记录值，其实是GitHub Page的IP地址。最后一行的记录值，换成你自己的仓库地址。 &emsp;&emsp;回到GoDaddy，找到你的域名的DNS管理，使用自定义域名服务器。添加如下两个域名服务器地址： f1g1ns1.dnspod.net f1g1ns2.dnspod.net 域名绑定&emsp;&emsp;最后一步，在你的Hexo的source目录下，创建一个名为CNAME的文件，注意，没有后缀。里面只写自己买的域名，建议不加www.，只写域名.com。&emsp;&emsp;好啦~试一试，到终端重新生成一遍，再发布一下。最后到浏览器地址栏敲入自己的域名，就能看到自己的博客啦~(看不到也没关系，DNS有延迟，等一等就好了。) 小结&emsp;&emsp;今天介绍了如何把本地Hexo服务部署到GitHub上，并绑定自己的域名。下节我们介绍主题的定制。我用的是Next主题。 &emsp;&emsp;元旦快乐~]]></content>
+      <categories>
+        <category>CS</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Hexo教程(2)——配置与使用]]></title>
+    <url>%2F2018%2F12%2F29%2FHexo%E6%95%99%E7%A8%8B(2)%E2%80%94%E2%80%94%E9%85%8D%E7%BD%AE%E4%B8%8E%E4%BD%BF%E7%94%A8%2F</url>
+    <content type="text"><![CDATA[&emsp;&emsp;上一节通过几个简单的命令，我们就搭建了本地Hexo服务。这一节我们看一下配置文件，以及学习如何使用Hexo。 配置&emsp;&emsp;这是上一节新建Hexo文件时，我们得到的目录结构。 ├── _config.yml ├── scaffolds ├── source | └── _posts └── themes &emsp;&emsp;_config.yml是Hexo的站点配置文件，一会儿详细说。scaffolds目录中是文章和草稿的模板，其中只包含Front-matter，这个词找不到合适的翻译，就把它当做文章头就好了。不用管它，不影响写文章。source目录下还有一个_posts目录，用于存放文章。有时也会有另外两个目录，_drafts和_pages，分别存放草稿和网页。themes中存放我们选择的主题。默认主题是landscape。&emsp;&emsp;我们着重看_config.yml和themes。 配置文件&emsp;&emsp;_config.yml文件包含了大部分配置，但其实很多是不需要修改的。我们详细看一下。 Site&emsp;&emsp;Site下主要是站点信息。不同版本的Hexo可能会多一些或者少一些，没有关系的。 标签 描述 title 网站标题 subtitle 网站副标题 description 网站描述 keywords 网站关键字 author 作者 language 语言 timezone 时区 &emsp;&emsp; description，keywords都是用于SEO，告诉搜说引擎该站点的描述。如果你想让你的博客被搜索引擎优先展示，那么优化SEO是必不可少的。language可以设为zh-Hans，表示中文。timezone可以不写，默认使用电脑时区。描述和:之间要有空格！ URL&emsp;&emsp;URL下是有关网址的信息。 标签 描述 url 网址 root 网站根目录 permalink 文章永久链接格式 permalink_defaults 网站描述 &emsp;&emsp;这里的root是Hexo站点的根目录。例如你的网站存放在一个子目录 http://yoursite.com/blog中，那么就把root设为/blog/。&emsp;&emsp;永久链接格式默认为:year/:month/:day/:title/，如果你想把它改成分类地址的话，就是:category/:title/。永久链接中的变量还可以使用其他变量，但是注意变量:id。这个id每次在你生成静态网页时，也就是运行hexo g时都会重新分配。而有些评论插件，就是靠id来识别文章的，id变化之后评论可能出现混乱。BTW，不知道煎蛋网评论时出现的“页面ID错误”是不是这种情况。 Directory&emsp;&emsp;这部分是目录的配置，不要改。 Writing&emsp;&emsp;这部分是文章写作的配置。也没有改动的必要。 Category &amp; Tag&emsp;&emsp;可以在这里添加标签或者分类的别名，但是一般用不上呢。 Date / Time format&emsp;&emsp;默认值也很好了。 Pagination&emsp;&emsp;per_page这个变量可以随意改，pagination_dir就不要动了。 标签 描述 per_page 每页文章数 pagination_dir 分页目录 Extensions&emsp;&emsp;这里只有一个标签，就是主题。你的theme目录下可以存放多个主题，但是只能用一个，就是在这里选择要使用的那一个。 Deployment&emsp;&emsp;用于部署，我们下一节再讲这里。 使用&emsp;&emsp;Hexo的使用其实就是写文章与发文章。对于写文章，官方的方法是通过下面的命令新建文章： $ hexo new [layout] &lt;title&gt; &emsp;&emsp;这句命令其实就是在文章目录下新建一个markdown文件，和手动添加几乎一样，唯一的区别就是把模板上的Front matter给你写好了。&emsp;&emsp;至于draft我感觉用处不大，所以就不说了，直接写文章就好。写好了再发布，和草稿不是一样嘛。 小结&emsp;&emsp;除了根目录下的_config.yml，我们会发现主题文件夹下也有一个_config.yml，那个是有关主题，更细节的配置。我们第四节再讲。下一节我们讲Hexo部署。]]></content>
+      <categories>
+        <category>CS</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Hexo教程(1)——搭建本地服务]]></title>
+    <url>%2F2018%2F12%2F28%2FHexo%E6%95%99%E7%A8%8B(1)%E2%80%94%E2%80%94%E6%90%AD%E5%BB%BA%E6%9C%AC%E5%9C%B0%E6%9C%8D%E5%8A%A1%2F</url>
+    <content type="text"><![CDATA[&emsp;&emsp;本网站使用Hexo博客框架，如果你也想搭建属于自己的博客站点，写写文章，发发照片什么的，也可以使用Hexo。极易上手，老少皆宜。网上有关Hexo的教程很多，官网教程也很详细，甚至嗨哟B站教学视频。这篇文章只是一个梳理，基于Mac，Windows大概也差不多。可能会有细节上的遗漏，我会随时更新的~ 简介Hexo是什么&emsp;&emsp; Hexo是一个基于Node.js的博客框架，快速简洁。支持Markdown，且拥有丰富的主题和插件。Linux，Mac，Windows均可使用。&emsp;&emsp; 和其他的博客框架比如Jekyll、Octopress、Wordpress类似，我们可以使用Hexo生成静态网页，并托管到GitHub上。&emsp;&emsp; 感谢来自台湾的作者tommy351。 Hexo适合我嘛&emsp;&emsp; 如果你不是程序员，不要担心，搭建和部署Hexo超级简单(除非遇到比较奇葩的环境问题)。Hexo拥有丰富的主题和插件，不管是写文章，还是图片展示，基本可以满足你的所有需求。 &emsp;&emsp; 你是程序员的话，选择就比较多了，但是如果你不是前端开发者，完全可以把重心放在自己的领域，Hexo可以省去许多麻烦。 安装安装准备&emsp;&emsp;安装Hexo前需要确定你的电脑里已经有： Node.js Git &emsp;&emsp;官网都告诉你了，安装超级简单，就不多说了。 Hexo安装&emsp;&emsp;Node.js和Git安装好后，安装Hexo只需下面一句命令： $ npm install -g hexo-cli &emsp;&emsp;Mac用户有时可能出现以下报错： ➜ ~ npm install -g hexo-cli&lt;/br&gt; npm WARN checkPermissions Missing write access to /usr/local/lib/node_modules npm ERR! path /usr/local/lib/node_modules&lt;/br&gt; npm ERR! code EACCES&lt;/br&gt; npm ERR! errno -13&lt;/br&gt; npm ERR! syscall access&lt;/br&gt; npm ERR! Error: EACCES: permission denied, access &apos;/usr/local/lib/node_modules&apos;&lt;/br&gt; npm ERR! { [Error: EACCES: permission denied, access &apos;/usr/local/lib/node_modules&apos;]&lt;/br&gt; npm ERR! stack:&lt;/br&gt; npm ERR! &apos;Error: EACCES: permission denied, access \&apos;/usr/local/lib/node_modules\&apos;&apos;,&lt;/br&gt; npm ERR! errno: -13,&lt;/br&gt; npm ERR! code: &apos;EACCES&apos;,&lt;/br&gt; npm ERR! syscall: &apos;access&apos;,&lt;/br&gt; npm ERR! path: &apos;/usr/local/lib/node_modules&apos; }&lt;/br&gt; npm ERR! &lt;/br&gt; npm ERR! The operation was rejected by your operating system.&lt;/br&gt; npm ERR! It is likely you do not have the permissions to access this file as the current user&lt;/br&gt; npm ERR! &lt;/br&gt; npm ERR! If you believe this might be a permissions issue, please double-check the&lt;/br&gt; npm ERR! permissions of the file and its containing directories, or try running&lt;/br&gt; npm ERR! the command again as root/Administrator (though this is not recommended).&lt;/br&gt; &lt;/br&gt; npm ERR! A complete log of this run can be found in:&lt;/br&gt; npm ERR! /Users/pluto/.npm/_logs/2018-12-29T21_05_36_404Z-debug.log&lt;/br&gt; &emsp;&emsp;一个简单的解决方法是直接使用sudo运行上面的命令： $ sudo npm install -g hexo-cli &emsp;&emsp;或者换到root用户操作。&emsp;&emsp;但是npm不建议这样，并提供了官方的解决办法。 安装好之后，使用下面的命令就可以看到Hexo版本： $ hexo version 建站&emsp;&emsp;安装好Hexo，我们就可以在本地建站了。&emsp;&emsp;在终端找到想要存放Hexo文件的目录，运行： $ hexo init [folder] &emsp;&emsp;OK，这个时候我们就可以在目录下看到新建的Hexo文件夹了。以下是其中一些必要的文件，你的目录中可能还有别的。 ├── _config.yml ├── scaffolds ├── source | └── _posts └── themes &emsp;&emsp;我们后面再详细分析每个文件的用途，我们先生成一下静态文件。进到Hexo的文件目录中，运行 $ hexo generate &emsp;&emsp;该命令也可以简写为 $ hexo g &emsp;&emsp;运行之后，我们可以看到多了一个public文件夹，这玩意儿就是生成的静态网页。然后我们启动本地服务： $ hexo server &emsp;&emsp;同样，可以简写为 $ hexo s &emsp;&emsp;现在，打开浏览器，地址栏输入http://localhost:4000，就是本地的服务啦~ 默认的主题是landscape，就长下面这个样子。 &emsp;&emsp;在终端Ctrl+c可以终止本地服务。 小结&emsp;&emsp; 好哒~本节内容就到这里，我们已经可以在本地运行Hexo服务了。下一节我们了解Hexo的相关配置。]]></content>
+      <categories>
+        <category>CS</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+</search>
